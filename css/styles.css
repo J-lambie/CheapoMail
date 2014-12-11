@@ -1,16 +1,35 @@
+body
+{
+    font-family: "Arial";
+}
+
 #sign-up
 {
+    background-color: #008080;
+    border: 4px double white;
+    border-radius: 10%;
+    padding: 20px;
     display: none;
+    width:500px;
+    margin:auto;
 }
 
 #user-page
 {
     display: block;
+    
 }
 
 #sign-in
 {
+    
+    background-color:#008080;
     display: block;
+    width: 500px;
+    margin:auto;
+    border: 4px double white;
+    border-radius: 10%;
+    padding: 20px;
 }
 
 #homepage
@@ -22,4 +41,35 @@
 .sections
 {
     display: inline;
+}
+#inbox
+{
+    display:block;
+    overflow: auto;
+}
+
+.form-field
+{
+    position:relative;
+    margin-bottom: 10px;
+    margin-left:80px;
+    width:auto;
+}
+#toggle-register
+{
+    float:right;
+}
+#compose .form-field
+{
+    margin-left: 0px;
+}
+#login-btn
+{
+    position:relative;
+    float:right;
+}
+#register-btn
+{
+    position:relative;
+    float:right;
 }
