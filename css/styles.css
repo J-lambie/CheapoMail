@@ -1,0 +1,25 @@
+#sign-up
+{
+    display: none;
+}
+
+#user-page
+{
+    display: block;
+}
+
+#sign-in
+{
+    display: block;
+}
+
+#homepage
+{
+    display: none;
+}
+
+
+.sections
+{
+    display: inline;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - CheapoMail@localhost" uuid="29c00dd4-f881-44f8-a4ad-a9da5e263e1f">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>cheapomail.*</schema-pattern>
+      <default-schemas>cheapomail.*</default-schemas>
+    </data-source>
+  </component>
+</project>
+
