@@ -15,11 +15,31 @@ window.onload = function () {
 function initNewMessage() {
     var subject = document.forms['messageForm']['msg-subject'],
         recipients = document.forms['messageForm']['msg-recipients'],
-        body = document.forms['messageForm']['msg-body'];
-
+        body = document.forms['messageForm']['msg-body'],
+        valid=true,
+        check=[subject,recipients,body];
+    
+        
     // add validation
-
+    for(var i=0;i<check.length;i++)
+    {
+        if(check[i].value==null||check[i].value==""){
+            valid=false;
+            check[i].style.backgroundColor="red";
+            console.log("incorrect");
+        }
+        else{
+            check[i].style.backgroundColor="white";
+        }
+    }
+            
+        
+    if(valid){
     sendMessage(subject.value, recipients.value, body.value);
+    }
+    else{
+        alert("Something is wrong with one of the fields");
+    }
 }
 
 function sendMessage(subject, recipients, body) {
@@ -64,11 +84,30 @@ function toggleUserAdmin() {
 
 function initLogin() {
     var username = document.forms["signInForm"]["loginUsername"],
-        password = document.forms["signInForm"]["loginPassword"];
-
+        password = document.forms["signInForm"]["loginPassword"],
+        check=[username,password],
+        valid=true;
     // add validation
-
-    login(username.value, password.value);
+     
+    for(var i=0;i<check.length;i++)
+    {
+        if(check[i].value== null || check[i].value == "")
+        {
+            valid=false;
+            check[i].style.backgroundColor="red";
+        }
+        else{
+            check[i].style.backgroundColor="white";
+        }
+    }
+    
+    if (valid){
+        
+        login(username.value, password.value);
+    }
+    else{
+        alert("Something is wrong with the form");
+    }
 }
 
 function login(username, password) {
@@ -87,6 +126,7 @@ function userLoginSuccess(response) {
     var result = response.responseText;
     //alert("Success! \n\n" + result);
     $('test').update(isNaN(result));
+    console.log(result);
     if (isNaN(result)) {
         alert("Wrong username or password");
     } else {
@@ -198,7 +238,7 @@ function userAddedSuccess(response) {
 }
 
 function userAddedFail() {
-    alert("Something went wrong")
+    alert("Something went wrong");
 }
 
 function validatePassword(pass) {
@@ -210,5 +250,5 @@ function validatePassword(pass) {
         return false;
     else if (!((pass.search(/(a-z)+/)) && (pass.search(/(0-9)+/))))
         return false;
-    return true
+    return true;
 }
