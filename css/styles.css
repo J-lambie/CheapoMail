@@ -41,10 +41,10 @@ body
 .sections
 {
     display: inline;
+
 }
 #inbox
 {
-    display:block;
     overflow: auto;
 }
 
@@ -52,7 +52,7 @@ body
 {
     position:relative;
     margin-bottom: 10px;
-    margin-left:80px;
+    margin-left:40px;
     width:auto;
 }
 #toggle-register
